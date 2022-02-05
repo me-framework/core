@@ -4,7 +4,7 @@ use ReflectionClass;
 use me\core\Component;
 use me\core\helpers\ArrayHelper;
 class Container extends Component {
-    public function build($id) {
+    public static function build($id) {
         if (is_string($id)) {
             $id = ['class' => $id];
         }
