@@ -20,14 +20,17 @@ class Cache {
         }
         self::$_cache = array_merge_recursive(self::$_cache, $v);
     }
-    public static function getCache($names) {
+    public static function getCache($names, $defaultValue = null) {
         if (!is_array($names)) {
             $names = explode('.', $names);
         }
-        $v     = self::$_cache;
+        $value = self::$_cache;
         foreach ($names as $name) {
-            $v = $v[$name];
+            if (!isset($value[$name])) {
+                return $defaultValue;
+            }
+            $value = $value[$name];
         }
-        return $v;
+        return $value;
     }
 }
