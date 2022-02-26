@@ -18,6 +18,9 @@ class Cache {
             }
             $v[$name] = $a;
         }
+        $key = array_key_first($v);
+        $key2 = array_key_first($v[$key]);
+        unset(self::$_cache[$key][$key2]);
         self::$_cache = array_merge_recursive(self::$_cache, $v);
     }
     public static function getCache($names, $defaultValue = null) {

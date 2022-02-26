@@ -15,7 +15,7 @@ class Component {
     /**
      * 
      */
-    public function init() {
+    protected function init() {
         
     }
     /**
