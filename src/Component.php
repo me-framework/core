@@ -1,7 +1,7 @@
 <?php
 namespace me\core;
 use Exception;
-use me\core\helpers\ArrayHelper;
+use me\helpers\ArrayHelper;
 class Component {
     /**
      * @param array $config Component Config

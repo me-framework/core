@@ -1,7 +1,6 @@
 <?php
-namespace me\core\components;
-use me\core\Component;
-class Security extends Component {
+namespace me\core;
+class Security {
     public static function generateRandomString($codeLength = 32, $characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789') {
         $randstring = '';
         $length     = strlen($characters) - 1;

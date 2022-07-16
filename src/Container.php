@@ -1,9 +1,8 @@
 <?php
-namespace me\core\components;
+namespace me\core;
 use ReflectionClass;
-use me\core\Component;
-use me\core\helpers\ArrayHelper;
-class Container extends Component {
+use me\helpers\ArrayHelper;
+class Container {
     public static function build($id) {
         if (is_string($id)) {
             $id = ['class' => $id];
