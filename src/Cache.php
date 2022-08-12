@@ -1,7 +1,16 @@
 <?php
 namespace me\core;
+/**
+ * 
+ */
 class Cache {
+    /**
+     * 
+     */
     private static $_cache = [];
+    /**
+     * 
+     */
     public static function setCache($names, $value) {
         $v = [];
         if (!is_array($names)) {
@@ -18,11 +27,14 @@ class Cache {
             }
             $v[$name] = $a;
         }
-        $key = array_key_first($v);
-        $key2 = array_key_first($v[$key]);
+        $key          = array_key_first($v);
+        $key2         = array_key_first($v[$key]);
         unset(self::$_cache[$key][$key2]);
         self::$_cache = array_merge_recursive(self::$_cache, $v);
     }
+    /**
+     * 
+     */
     public static function getCache($names, $defaultValue = null) {
         if (!is_array($names)) {
             $names = explode('.', $names);
