@@ -1,7 +1,6 @@
 <?php
 namespace me\core;
 use Exception;
-use me\helpers\ArrayHelper;
 /**
  * 
  */
@@ -11,7 +10,9 @@ class Component {
      */
     public function __construct($config = []) {
         if (!empty($config)) {
-            ArrayHelper::configure($this, $config);
+            foreach ($config as $name => $value) {
+                $this->$name = $value;
+            }
         }
         $this->init();
     }
